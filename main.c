@@ -13,7 +13,7 @@ int main(int ac, char **argv){
 
     (void)ac;
 
-    while (1)
+    while (true)
 	{
         printf("%s", "$ ");
         nchars_read = getline(&lineptr, &n, stdin);
