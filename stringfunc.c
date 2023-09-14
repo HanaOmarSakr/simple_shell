@@ -1,38 +1,38 @@
 #include "main.h"
 
 /**
-_strcpy - copies a string to a buffer
-@dest: destination buffer
-@src: source buffer
-Return: pointer "start" which is the beginning of "dest"
-Description: important func
-*/
+ * _strcpy - .....
+ * @dest: .....
+ * @src: ....
+ * Return: Buffer
+ */
 char *_strcpy(char *dest, const char *src)
 {
-    char *start = dest;
+	char *start = dest;
 
-    while(*src != '\0') {
-        *dest = *src;
-        dest++;
-        src++;
-    }
+	while (*src != '\0')
+	{
+		*dest = *src;
+		dest++;
+		src++;
+	}
 
-    *dest = '\0';
-    return (start);
+	*dest = '\0';
+	return (start);
 }
 
 /**
-_strlen - gets lenght of string
-@buffer: string
-Return: length of "buffer"
-Description: important func
+ * _strlen - ....
+ * @buffer: string
+ * Return: length of "buffer"
+ * Description: important func
 */
 int _strlen(char *buffer)
 {
-    int i = 0;
+	int i = 0;
 
-    while (*buffer++ != '\0')
-        i++;
+	while (*buffer++ != '\0')
+		i++;
 
-    return (i);
+	return (i);
 }
