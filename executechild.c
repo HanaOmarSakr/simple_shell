@@ -9,7 +9,7 @@
 */
 void execute_command(char *args[], char *envp[])
 {
-    execve(args[0], args, envp);
-    perror("execve");
-    exit(1);
+	execve(args[0], args, envp);
+	perror("execve");
+	exit(1);
 }
