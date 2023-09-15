@@ -6,7 +6,7 @@
  * @pid: The process ID of the child process.
  * Return: Always 0 (Success)
  */
-int main(int argc, char *argv[])
+int main()
 {
 	pid_t pid;
 

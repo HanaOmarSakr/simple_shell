@@ -8,6 +8,8 @@
 #include <unistd.h>
 #include <sys/wait.h>
 #include <stdbool.h>
+#include <sys/stat.h>
+
 
 #define MAXLINE 512
 #define MAXARG 10
@@ -20,6 +22,8 @@ char *strtok(char *str, const char *delim);
 void wait_child(pid_t pid);
 void execute_command(char *args[], char *envp[]);
 int main(int argc, char *argv[]);
+	
+
 
 
 /*Printf declarations*/
