@@ -13,7 +13,7 @@
 
 #define MAXLINE 512
 #define MAXARG 10
-
+#define DELIM 
 
 char *_strcpy(char *dest, const char *src);
 int _strlen(char *buffer);
@@ -22,6 +22,8 @@ char *strtok(char *str, const char *delim);
 void wait_child(pid_t pid);
 void execute_command(char *args[], char *envp[]);
 int main(int argc, char *argv[]);
+char **my_strtok(char *str);
+int is_delim(char b);
 	
 
 

@@ -19,11 +19,11 @@ int main()
 	}
 	else if (pid == 0)
 	{
-		printf("Child process\n");
+		_printf("Child process\n");
 	}
 	else
 	{
-		printf("Parent process\n");
+		_printf("Parent process\n");
 	}
 	while (true)
 	{
