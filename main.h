@@ -6,6 +6,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <sys/wait.h>
+
+#define MAXLINE 512
+#define MAXARG 10
+
 
 char *_strcpy(char *dest, const char *src);
 int _strlen(char *buffer);
