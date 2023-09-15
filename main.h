@@ -7,6 +7,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <sys/wait.h>
+#include <stdbool.h>
 
 #define MAXLINE 512
 #define MAXARG 10
@@ -16,6 +17,10 @@ char *_strcpy(char *dest, const char *src);
 int _strlen(char *buffer);
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 char *strtok(char *str, const char *delim);
+void wait_child(pid_t pid);
+void execute_command(char *args[], char *envp[]);
+int main(int argc, char *argv[]);
+
 
 /*Printf declarations*/
 #define UNUSED(x) (void)(x)
