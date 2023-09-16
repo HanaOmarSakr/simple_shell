@@ -13,7 +13,9 @@
 
 #define MAXLINE 512
 #define MAXARG 10
-#define DELIM 
+#define DELIM
+#define INFO_INIT {0, NULL, NULL, NULL, 0}
+
 
 char *_strcpy(char *dest, const char *src);
 int _strlen(char *buffer);
@@ -24,7 +26,36 @@ void execute_command(char *args[], char *envp[]);
 int main(int argc, char *argv[]);
 char **my_strtok(char *str);
 int is_delim(char b);
+void _eputs(char *);
+int _eputchar(char);
+int _unsetenv(info_t *, char *);
+int _setenv(info_t *, char *, char *);
+char **get_environ(info_t *);
+char *_getenv(info_t *, const char *);
+int _myenv(info_t *);
+int _mysetenv(info_t *);
+int _myunsetenv(info_t *);
+int populate_env_list(info_t *);
+
 	
+/**
+ * arg: a string generated from getline containing arguments.
+ * argc: the argument count.
+ * argv: an array of string generated from arg.
+ * env: linked list local copy of environ.
+ * environ: custom modified copy of environ from LL env.
+ * status: the return status of the last exec'd command.
+ */
+typedef struct info
+{
+	char *arg;
+	char **argv;
+	int argc;
+	list_t *env;
+	char **environ;
+	int status;
+	int env_changed
+} info_t;
 
 
 
