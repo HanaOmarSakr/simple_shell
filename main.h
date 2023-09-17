@@ -16,32 +16,35 @@
 #define INFO_INIT {0, NULL, NULL, NULL, 0}
 
 /**
- * arg: a string generated from getline containing arguments.
- * argc: the argument count.
- * argv: an array of string generated from arg.
- * env: linked list local copy of environ.
- * environ: custom modified copy of environ from LL env.
- * status: the return status of the last exec'd command.
+ * struct info - ......
+ * @arg: a string generated from getline containing arguments.
+ * @argc: the argument count.
+ * @argv: an array of string generated from arg.
+ * @env_changed: ......
+ * @environ: custom modified copy of environ from LL env.
+ * @status: the return status of the last exec'd command.
+ * Description: ...
  */
+
 typedef struct info
 {
 	char *arg;
 	char **argv;
 	int argc;
-	/*list_t *env;*/
+	/*list_t *env;   @env: linked list local copy of environ. */
 	char **environ;
 	int status;
 	int env_changed;
 } info_t;
 
-int _getline(char *line);
+ssize_t _getline(char **line);
 char **split_line(char *str, char delim);
 char *_strcpy(char *dest, const char *src);
 int _strlen(char *buffer);
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 void wait_child(pid_t pid);
 void execute_command(char *args[], char *envp[]);
-int main();
+int main(void);
 char **my_strtok(char *str);
 int is_delim(char b);
 void _eputs(char *);

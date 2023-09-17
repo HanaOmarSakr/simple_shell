@@ -10,7 +10,7 @@ int main()
 	while (true)
 	{
 		_printf("%s", "$ ");
-		nchars_read = _getline(lineptr);
+		nchars_read = _getline(&lineptr);
 		/* check if the getline function reached EOF or user use CTRL + D */
 		if (nchars_read == -1)
 			return (-1);

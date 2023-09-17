@@ -1,10 +1,16 @@
 #include "main.h"
 
-int _getline(char *line)
-{
-    size_t buffer = 0;
-    int l;
+/**
+ * _getline - ....
+ * @line: string
+ * Return: int
+*/
 
-    l = getline(&line, &buffer, stdin);
-    return l;
+ssize_t _getline(char **line)
+{
+	size_t buffer = 0;
+	ssize_t l;
+
+	l = getline(line, &buffer, stdin);
+	return (l);
 }
