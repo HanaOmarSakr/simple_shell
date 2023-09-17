@@ -16,11 +16,13 @@ int main()
 			return (-1);
 
 		splitted = split_line(lineptr, ' ');
-		while (splitted)
+		i = 0;
+		while (splitted[i])
 		{
 				_printf("%s\n", splitted[i]);
 				i++;
 		}
+		free(splitted);
 		free(lineptr);
 	}
 	return (0);
