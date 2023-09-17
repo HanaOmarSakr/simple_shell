@@ -10,34 +10,11 @@
 #include <stdbool.h>
 #include <sys/stat.h>
 
-
 #define MAXLINE 512
 #define MAXARG 10
 #define DELIM
 #define INFO_INIT {0, NULL, NULL, NULL, 0}
 
-
-char *_strcpy(char *dest, const char *src);
-int _strlen(char *buffer);
-ssize_t getline(char **lineptr, size_t *n, FILE *stream);
-char *strtok(char *str, const char *delim);
-void wait_child(pid_t pid);
-void execute_command(char *args[], char *envp[]);
-int main(int argc, char *argv[]);
-char **my_strtok(char *str);
-int is_delim(char b);
-void _eputs(char *);
-int _eputchar(char);
-int _unsetenv(info_t *, char *);
-int _setenv(info_t *, char *, char *);
-char **get_environ(info_t *);
-char *_getenv(info_t *, const char *);
-int _myenv(info_t *);
-int _mysetenv(info_t *);
-int _myunsetenv(info_t *);
-int populate_env_list(info_t *);
-
-	
 /**
  * arg: a string generated from getline containing arguments.
  * argc: the argument count.
@@ -51,13 +28,32 @@ typedef struct info
 	char *arg;
 	char **argv;
 	int argc;
-	list_t *env;
+	/*list_t *env;*/
 	char **environ;
 	int status;
-	int env_changed
+	int env_changed;
 } info_t;
 
-
+int _getline(char *line);
+char **split_line(char *str, char delim);
+char *_strcpy(char *dest, const char *src);
+int _strlen(char *buffer);
+ssize_t getline(char **lineptr, size_t *n, FILE *stream);
+void wait_child(pid_t pid);
+void execute_command(char *args[], char *envp[]);
+int main();
+char **my_strtok(char *str);
+int is_delim(char b);
+void _eputs(char *);
+int _eputchar(char);
+int _unsetenv(info_t *, char *);
+int _setenv(info_t *, char *, char *);
+char **get_environ(info_t *);
+char *_getenv(info_t *, const char *);
+int _myenv(info_t *);
+int _mysetenv(info_t *);
+int _myunsetenv(info_t *);
+int populate_env_list(info_t *);
 
 /*Printf declarations*/
 #define UNUSED(x) (void)(x)
