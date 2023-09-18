@@ -36,3 +36,27 @@ int _strlen(char *buffer)
 
 	return (i);
 }
+
+/**
+ * _strdup - ....
+ * @string: string
+ * Return: pointer to a duplicated buffer
+ * Description: important func
+*/
+
+char *_strdup(const char *string)
+{
+	char *start;
+	char *p;
+
+	p = malloc(_strlen(string) + 1);
+	if (p == NULL)
+	{
+		return (NULL);
+	}
+	start = p;
+	while (*src)
+		*p++ = *src++;
+	*p = '\0';
+	return (start);
+}

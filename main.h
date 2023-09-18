@@ -42,6 +42,7 @@ void execute(char **argv);
 char **split_line(char *str, char *delim);
 char *_strcpy(char *dest, const char *src);
 int _strlen(char *buffer);
+char *_strdup(const char *string);
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 void wait_child(pid_t pid);
 void execute_command(char *args[], char *envp[]);
