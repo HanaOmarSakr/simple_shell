@@ -2,28 +2,22 @@
 
 int main()
 {
-	char *lineptr = NULL;
+	char *input = NULL;
 	char **splitted;
-	ssize_t nchars_read;
-	int i = 0;
+	ssize_t check;
 
 	while (true)
 	{
 		_printf("%s", "$ ");
-		nchars_read = _getline(&lineptr);
+		check = _getline(&input);
 		/* check if the getline function reached EOF or user use CTRL + D */
-		if (nchars_read == -1)
+		if (check == -1)
 			return (-1);
 
-		splitted = split_line(lineptr, ' ');
-		i = 0;
-		while (splitted[i])
-		{
-				_printf("%s\n", splitted[i]);
-				i++;
-		}
-		free(splitted);
-		free(lineptr);
+		splitted = split_line(input, " \n");
+		execute(splitted);
 	}
+	free(input);
+	free(splitted);
 	return (0);
 }

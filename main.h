@@ -38,7 +38,8 @@ typedef struct info
 } info_t;
 
 ssize_t _getline(char **line);
-char **split_line(char *str, char delim);
+void execute(char **argv);
+char **split_line(char *str, char *delim);
 char *_strcpy(char *dest, const char *src);
 int _strlen(char *buffer);
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
