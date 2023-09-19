@@ -37,6 +37,19 @@ typedef struct info
 	int env_changed;
 } info_t;
 
+/**
+ * struct liststr - singly linked list.
+ * @numb: the number field.
+ * @str: a string.
+ * @next: points to the next node.
+ */
+typedef struct liststr
+{
+	int numb;
+	char *str;
+	struct liststr *next;
+} list_t;
+
 ssize_t _getline(char **line);
 void execute(char **argv);
 char **split_line(char *str, char *delim);
@@ -59,6 +72,15 @@ int _myenv(info_t *);
 int _mysetenv(info_t *);
 int _myunsetenv(info_t *);
 int populate_env_list(info_t *);
+int _myhistory(info_t *);
+int _myalias(info_t *);
+int _myhelp(info_t *);
+int _mycd(info_t *);
+int _myexit(info_t *);
+int _putchar(char);
+void _puts(char *);
+int _strcmp(char *, char *);
+
 
 /*Printf declarations*/
 #define UNUSED(x) (void)(x)
