@@ -27,7 +27,7 @@ char *_strcpy(char *dest, const char *src)
  * Return: length of "buffer"
  * Description: important func
 */
-int _strlen(char *buffer)
+int _strlen(const char *buffer)
 {
 	int i = 0;
 
@@ -55,8 +55,19 @@ char *_strdup(const char *string)
 		return (NULL);
 	}
 	start = p;
-	while (*src)
-		*p++ = *src++;
+	while (*string)
+		*p++ = *string++;
 	*p = '\0';
 	return (start);
+}
+char* _strcat(char *dest, const char *src)
+{
+    char* ptr = dest + strlen(dest);
+
+    while (*src != '\0')
+        *ptr++ = *src++;
+
+    *ptr = '\0';
+
+    return dest;
 }
