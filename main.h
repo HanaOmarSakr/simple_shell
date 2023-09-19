@@ -9,6 +9,7 @@
 #include <sys/wait.h>
 #include <stdbool.h>
 #include <sys/stat.h>
+#include <sys/types.h>
 
 #define MAXLINE 512
 #define MAXARG 10
@@ -37,6 +38,7 @@ typedef struct info
 	int env_changed;
 } info_t;
 
+<<<<<<< HEAD
 /**
  * struct liststr - singly linked list.
  * @numb: the number field.
@@ -50,11 +52,14 @@ typedef struct liststr
 	struct liststr *next;
 } list_t;
 
+=======
+char* _strcat(char* dest, const char* src);
+>>>>>>> 763428efc6510452c1e5adab6c5a3c769ad1a5dd
 ssize_t _getline(char **line);
 void execute(char **argv);
 char **split_line(char *str, char *delim);
 char *_strcpy(char *dest, const char *src);
-int _strlen(char *buffer);
+int _strlen(const char *buffer);
 char *_strdup(const char *string);
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 void wait_child(pid_t pid);
