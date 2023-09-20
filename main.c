@@ -1,7 +1,6 @@
 #include "main.h"
 
 int main(void)
-
 {
 	char *input = NULL;
 	char **splitted;

@@ -43,18 +43,22 @@ typedef struct list_s
  * Description: ...
  */
 
-typedef struct info
+typedef struct info_structure
 {
 	char *arg;
 	char **argv;
+	char *path;
 	int argc;
-	list_t *env; 
-	char **environ;
-	int status;
-	int env_changed;
+	unsigned int line_len;
+	list_t *env;
 	list_t *history;
 	list_t *alias;
-
+	char **environ;
+	int env_changed;
+	int status;
+	char **cmd_buf; 
+	int readfd;
+	int histcount;
 } info_t;
 
 ssize_t ggetline(char **lineptr, size_t *n);
@@ -66,7 +70,6 @@ char **split_line(char *str, char *delim);
 char *_strcpy(char *dest, const char *src);
 int _strlen(const char *buffer);
 char *_strdup(const char *);
-ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 void wait_child(pid_t pid);
 void execute_command(char *args[], char *envp[]);
 int main(void);
