@@ -75,3 +75,17 @@ char *_strcat(char *dest, const char *src)
 	*ptr = '\0';
 	return (dest);
 }
+
+
+void* _memcpy(void* dest, const void* src, size_t n)
+{
+	size_t i;
+    char* csrc = (char*) src;
+    char* cdest = (char*) dest;
+
+    for (i = 0; i < n; i++) {
+        cdest[i] = csrc[i];
+    }
+
+    return (dest);
+}

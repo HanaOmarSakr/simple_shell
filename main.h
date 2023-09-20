@@ -1,6 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#include <fcntl.h>
 #include <errno.h>
 #include <stdarg.h>
 #include <stdio.h>
@@ -11,6 +12,7 @@
 #include <stdbool.h>
 #include <sys/stat.h>
 #include <sys/types.h>
+#include <stddef.h>
 
 #define MAXLINE 512
 #define MAXARG 10
@@ -62,9 +64,15 @@ typedef struct info_structure
 	int histcount;
 } info_t;
 
+#define O_RDONLY 00
+#define O_WRONLY 01
+#define O_RDWR   02
+
+void* _memcpy(void* dest, const void* src, size_t n);
 void freeptp(char **pp);
+char *getInput(char *path_file);
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 void execute_file(char *file_path);
-ssize_t ggetline(char **lineptr, size_t *n);
 char *get_path(char *command);
 char* _strcat(char* dest, const char* src);
 ssize_t _getline(char **line);
@@ -73,7 +81,6 @@ char **split_line(char *str, char *delim);
 char *_strcpy(char *dest, const char *src);
 int _strlen(const char *buffer);
 char *_strdup(const char *);
-void wait_child(pid_t pid);
 void execute_command(char *args[], char *envp[]);
 int main(int argc, char **argv);
 char **my_strtok(char *str);

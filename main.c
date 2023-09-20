@@ -9,7 +9,7 @@ int main(int argc, char **argv)
 	while (true)
 	{
 		if (argc == 2)
-			execute_file(get_path(argv[1]));
+			execute(split_line(getInput(argv[1]), " \n"));
 
 		_printf("$ ");
 		check = _getline(&input);
