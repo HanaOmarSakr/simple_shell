@@ -15,7 +15,7 @@ int main(void)
 		if (check == -1)
 			return (-1);
 
-		splitted = split_line(input);
+		splitted = split_line(input, " \n");
 		execute(splitted);
 	}
 	free(input);

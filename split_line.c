@@ -6,7 +6,7 @@
  * Return: splitted line (pointer to a pointer)
 */
 
-char **split_line(char *str)
+char **split_line(char *str, char *delim)
 {
 	char *lineptr_copy;
 	char *token;
@@ -23,21 +23,21 @@ char **split_line(char *str)
 
 	strcpy(lineptr_copy, str);
 	/* calculate the total number of tokens */
-	token = strtok(str);
+	token = strtok(str, delim);
 	while (token != NULL)
 	{
 		num++;
-		tokenmy_strtok(NULL); /*CONTINUE WHERE U STOPPED*/
+		token = strtok(NULL, delim); /*CONTINUE WHERE U STOPPED*/
 	}
 
 	argv = malloc(sizeof(char *) * (num + 1));
 	/* Store each token in the argv array */
-	tokenmy_strtok(lineptr_copy);
+	token = strtok(lineptr_copy, delim);
 	for (i = 0; token != NULL; i++)
 	{
 		argv[i] = malloc(sizeof(char) * (strlen(token) + 1));
 		strcpy(argv[i], token);
-		tokenmy_strtok(NULL);
+		token = strtok(NULL, delim);
 	}
 	argv[i] = NULL;
 
