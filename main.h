@@ -1,6 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#include <errno.h>
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -61,6 +62,7 @@ typedef struct info_structure
 	int histcount;
 } info_t;
 
+void execute_file(char *file_path);
 ssize_t ggetline(char **lineptr, size_t *n);
 char *get_path(char *command);
 char* _strcat(char* dest, const char* src);
@@ -72,33 +74,8 @@ int _strlen(const char *buffer);
 char *_strdup(const char *);
 void wait_child(pid_t pid);
 void execute_command(char *args[], char *envp[]);
-int main(void);
+int main(int argc, char **argv);
 char **my_strtok(char *str);
-int is_delim(char b);
-void _eputs(char *);
-int _eputchar(char);
-int _unsetenv(info_t *, char *);
-int _setenv(info_t *, char *, char *);
-char **get_environ(info_t *);
-char *_getenv(info_t *, const char *);
-int _myenv(info_t *);
-int _mysetenv(info_t *);
-int _myunsetenv(info_t *);
-int populate_env_list(info_t *);
-int _myhistory(info_t *);
-int _myalias(info_t *);
-int _myhelp(info_t *);
-int _mycd(info_t *);
-int _myexit(info_t *);
-int _putchar(char);
-void _puts(char *);
-int _strcmp(char *, char *);
-char *_strchr(char *, char);
-void clear_info(info_t *);
-void set_info(info_t *, char **);
-void free_info(info_t *, int);
-char **strtow(char *, const char *);
-
 
 /*Printf declarations*/
 #define UNUSED(x) (void)(x)

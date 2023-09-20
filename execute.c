@@ -9,15 +9,25 @@
 
 void execute(char **argv)
 {
+	pid_t pid = fork();
 	int check;
 
-	if (argv)
-	{
-	check = execve(get_path(argv[0]), argv, NULL);
+	if (pid < 0) {
+        perror("fork failed");
+        return;
+    }
 
-	if (check == -1)
-	{
-		perror("Error");
-	};
+    if (pid == 0) {
+		if (argv)
+		{
+			check = execve(get_path(argv[0]), argv, NULL);
+			if (check == -1)
+				perror("Error");
+		}
 	}
+    else 
+	{
+        int status;
+        waitpid(pid, &status, 0); 
+    }
 }

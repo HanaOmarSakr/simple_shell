@@ -1,6 +1,6 @@
 #include "main.h"
 
-int main(void)
+int main(int argc, char **argv)
 {
 	char *input = NULL;
 	char **splitted;
@@ -8,6 +8,9 @@ int main(void)
 
 	while (true)
 	{
+		if (argc == 2)
+			execute_file(get_path(argv[1]));
+
 		_printf("%s", "$ ");
 		check = _getline(&input);
 		/* check if the getline function reached EOF or user use CTRL + D */
