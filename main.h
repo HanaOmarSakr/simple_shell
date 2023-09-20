@@ -18,8 +18,18 @@
 #define WRITE_BUF_SIZE 1024
 #define BUF_FLUSH -1
 
-
-
+/**
+ * struct liststr - singly linked list.
+ * @numb: the number field.
+ * @str: a string.
+ * @next: points to the next node.
+ */
+typedef struct list_s
+{
+	unsigned int len;
+	char *str;
+	struct list_s *next;
+} list_t;
 
 /**
  * struct info - ......
@@ -47,23 +57,9 @@ typedef struct info
 
 } info_t;
 
-<<<<<<< HEAD
-/**
- * struct liststr - singly linked list.
- * @numb: the number field.
- * @str: a string.
- * @next: points to the next node.
- */
-typedef struct list_s
-{
-	unsigned int len;
-	char *str;
-	struct list_s *next;
-} list_t;
-
-=======
+ssize_t ggetline(char **lineptr, size_t *n);
+char *get_path(char *command);
 char* _strcat(char* dest, const char* src);
->>>>>>> 763428efc6510452c1e5adab6c5a3c769ad1a5dd
 ssize_t _getline(char **line);
 void execute(char **argv);
 char **split_line(char *str, char *delim);

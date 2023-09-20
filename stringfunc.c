@@ -58,6 +58,13 @@ char *_strdup(const char *string)
 	*p = '\0';
 	return (start);
 }
+/**
+ * _strcat - ....
+ * @dest: string
+ * @src: pointer to a duplicated buffer
+ * Return: pointer
+ * Description: important func
+*/
 
 char *_strcat(char *dest, const char *src)
 {
