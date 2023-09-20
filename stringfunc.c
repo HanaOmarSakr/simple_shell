@@ -16,7 +16,6 @@ char *_strcpy(char *dest, const char *src)
 		dest++;
 		src++;
 	}
-
 	*dest = '\0';
 	return (start);
 }
@@ -33,7 +32,6 @@ int _strlen(const char *buffer)
 
 	while (*buffer++ != '\0')
 		i++;
-
 	return (i);
 }
 
@@ -60,14 +58,12 @@ char *_strdup(const char *string)
 	*p = '\0';
 	return (start);
 }
-char* _strcat(char *dest, const char *src)
+char *_strcat(char *dest, const char *src)
 {
-    char* ptr = dest + strlen(dest);
+	char *ptr = dest + strlen(dest);
 
-    while (*src != '\0')
-        *ptr++ = *src++;
-
-    *ptr = '\0';
-
-    return dest;
+	while (*src != '\0')
+		*ptr++ = *src++;
+	*ptr = '\0';
+	return (dest);
 }
