@@ -62,6 +62,7 @@ typedef struct info_structure
 	int histcount;
 } info_t;
 
+void freeptp(char **pp);
 void execute_file(char *file_path);
 ssize_t ggetline(char **lineptr, size_t *n);
 char *get_path(char *command);

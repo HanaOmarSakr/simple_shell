@@ -11,7 +11,7 @@ int main(int argc, char **argv)
 		if (argc == 2)
 			execute_file(get_path(argv[1]));
 
-		_printf("%s", "$ ");
+		_printf("$ ");
 		check = _getline(&input);
 		/* check if the getline function reached EOF or user use CTRL + D */
 		if (check == -1)
@@ -21,6 +21,6 @@ int main(int argc, char **argv)
 		execute(splitted);
 	}
 	free(input);
-	free(splitted);
+	freeptp(splitted);
 	return (0);
 }
