@@ -6,10 +6,11 @@ int main(int argc, char **argv)
 	char **splitted;
 	ssize_t check;
 
+	if (argc == 2)
+			execute(split_line(getInput(argv[1]), " \n"));
+		
 	while (true)
 	{
-		if (argc == 2)
-			execute(split_line(getInput(argv[1]), " \n"));
 
 		_printf("$ ");
 		check = _getline(&input);

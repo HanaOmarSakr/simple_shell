@@ -83,7 +83,7 @@ int _strlen(const char *buffer);
 char *_strdup(const char *);
 void execute_command(char *args[], char *envp[]);
 int main(int argc, char **argv);
-char **my_strtok(char *str);
+char *_strtok(char *str, const char *delim);
 
 /*Printf declarations*/
 #define UNUSED(x) (void)(x)
