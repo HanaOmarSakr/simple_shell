@@ -9,15 +9,15 @@
 
 int _isatty(info_t *info)
 {
-    if (!isatty(STDIN_FILENO))
-    {
-        return (0);  /* noninteractive mode */
-    }
+	if (!isatty(STDIN_FILENO))
+	{
+		return (0);  /* noninteractive mode */
+	}
 
-    if (info->readfd > 2)
-    {
-        return (0);
-    }
+	if (info->readfd > 2)
+	{
+		return (0);
+	}
 
-    return (1); /* interactive mode */
+	return (1); /* interactive mode */
 }

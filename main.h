@@ -14,67 +14,17 @@
 #include <sys/types.h>
 #include <stddef.h>
 
-#define MAXLINE 512
-#define MAXARG 10
-#define DELIM
-#define INFO_INIT {0, NULL, NULL, NULL, 0}
-#define WRITE_BUF_SIZE 1024
-#define BUF_FLUSH -1
-
-/**
- * struct liststr - singly linked list.
- * @numb: the number field.
- * @str: a string.
- * @next: points to the next node.
- */
-typedef struct list_s
-{
-	unsigned int len;
-	char *str;
-	struct list_s *next;
-} list_t;
-
-/**
- * struct info - ......
- * @arg: a string generated from getline containing arguments.
- * @argc: the argument count.
- * @argv: an array of string generated from arg.
- * @env: linked list local copy of environ.
- * @env_changed: ......
- * @environ: custom modified copy of environ from LL env.
- * @status: the return status of the last exec'd command.
- * Description: ...
- */
-
-typedef struct info_structure
-{
-	char *arg;
-	char **argv;
-	char *path;
-	int argc;
-	unsigned int line_len;
-	list_t *env;
-	list_t *history;
-	list_t *alias;
-	char **environ;
-	int env_changed;
-	int status;
-	char **cmd_buf; 
-	int readfd;
-	int histcount;
-} info_t;
-
 #define O_RDONLY 00
 #define O_WRONLY 01
 #define O_RDWR   02
 
-void* _memcpy(void* dest, const void* src, size_t n);
+void *_memcpy(void *dest, const void *src, size_t n);
 void freeptp(char **pp);
 char *getInput(char *path_file);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 void execute_file(char *file_path);
 char *get_path(char *command);
-char* _strcat(char* dest, const char* src);
+char *_strcat(char *dest, const char *src);
 ssize_t _getline(char **line);
 void execute(char **argv);
 char **split_line(char *str, char *delim);
@@ -88,9 +38,6 @@ char *_strtok(char *str, const char *delim);
 /*Printf declarations*/
 #define UNUSED(x) (void)(x)
 #define BUFF_SIZE 1024
-
-
-
 #define _MINUS 1
 #define _PLUS 2
 #define _ZERO 4

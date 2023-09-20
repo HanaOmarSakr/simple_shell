@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * get_path - returns true if shell is interactive mode
+ * @command: struct address
+ * Return: ...........
+ */
+
+
 char *get_path(char *command)
 {
 	char *path, *path_copy, *token_path, *file_path;

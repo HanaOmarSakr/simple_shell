@@ -76,16 +76,25 @@ char *_strcat(char *dest, const char *src)
 	return (dest);
 }
 
+/**
+ * _memcpy - ....
+ * @dest: string
+ * @src: pointer
+ * @n: .....
+ * Return: pointer
+ * Description: important func
+*/
 
-void* _memcpy(void* dest, const void* src, size_t n)
+void *_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t i;
-    char* csrc = (char*) src;
-    char* cdest = (char*) dest;
+	char *csrc = (char *) src;
+	char *cdest = (char *) dest;
 
-    for (i = 0; i < n; i++) {
-        cdest[i] = csrc[i];
-    }
+	for (i = 0; i < n; i++)
+	{
+		cdest[i] = csrc[i];
+	}
 
-    return (dest);
+	return (dest);
 }

@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * main - .........
+ * @argc: .........
+ * @argv: .........
+ * Return: ........
+ */
+
 int main(int argc, char **argv)
 {
 	char *input = NULL;
@@ -7,8 +14,8 @@ int main(int argc, char **argv)
 	ssize_t check;
 
 	if (argc == 2)
-			execute(split_line(getInput(argv[1]), " \n"));
-		
+		execute(split_line(getInput(argv[1]), " \n"));
+
 	while (true)
 	{
 
