@@ -20,7 +20,7 @@ char *get_path(char *command)
 		_strcat(file_path, "/");
 		_strcat(file_path, command);
 		_strcat(file_path, "\0");
-		check = stat(command, &buffer);
+		check = stat(file_path, &buffer);
 		if (check == 0)
 		{
 			free(path_copy);

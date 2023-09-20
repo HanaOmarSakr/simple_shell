@@ -9,10 +9,15 @@
 
 void execute(char **argv)
 {
-	int check = execve(argv[0], argv, NULL);
+	int check;
+
+	if (argv)
+	{
+	check = execve(get_path(argv[0]), argv, NULL);
 
 	if (check == -1)
 	{
 		perror("Error");
 	};
+	}
 }
