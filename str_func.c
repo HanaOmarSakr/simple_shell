@@ -76,3 +76,48 @@ void _puts(char *str)
 		d++;
 	}
 }
+
+/**
+ * **strtow - splits a string into words. repeat delimiters are ignored.
+ * @str: the input string.
+ * @q: the delimiter strin.
+ * Return: apointer to array of string, or NULL on fialure.
+ */
+char **strtow(char *str, char *q)
+{
+	int z, x, h, p, numbword = 0;
+	char **a;
+
+	if (str == NULL || str[0] == 0)
+		return (NULL);
+	if (!q)
+		q = " ";
+	for (z = 0, x = 0; x < numbword; x++)
+		if (!is_delim(str[z] != q) && (is_delim(str[z + 1], q) || !str[z + 1]))
+			numbword++;
+	if (numbword == 0)
+		return (NULL);
+	a = malloc((1 + numbword) * sizeof(char *));
+	if (!a)
+		return (NULL);
+	for (z = 0, x = 0; x < numbword; x++)
+		while (is_delim(str[z], q))
+			z++;
+		h = 0;
+		while (!is_delim(str[z + h], q) && str[z + h])
+			h++;
+		a[x] = malloc((h + 1) * sizeof(char));
+		if (!a[x])
+		{
+			for (h = 0; h < x; h++)
+				free(a[h]);
+			free(a);
+			return (NULL);
+		}
+		for (p = 0; p < h; p++)
+			a[x][p] = str[z++];
+		a[x][p] = 0;
+	}
+	a[x] = NULL;
+	return (a);
+}

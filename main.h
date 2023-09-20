@@ -69,7 +69,7 @@ void execute(char **argv);
 char **split_line(char *str, char *delim);
 char *_strcpy(char *dest, const char *src);
 int _strlen(const char *buffer);
-char *_strdup(const char *string);
+char *_strdup(const char *);
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 void wait_child(pid_t pid);
 void execute_command(char *args[], char *envp[]);
@@ -95,6 +95,10 @@ int _putchar(char);
 void _puts(char *);
 int _strcmp(char *, char *);
 char *_strchr(char *, char);
+void clear_info(info_t *);
+void set_info(info_t *, char **);
+void free_info(info_t *, int);
+char **strtow(char *, const char *);
 
 
 /*Printf declarations*/
