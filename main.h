@@ -15,12 +15,18 @@
 #define MAXARG 10
 #define DELIM
 #define INFO_INIT {0, NULL, NULL, NULL, 0}
+#define WRITE_BUF_SIZE 1024
+#define BUF_FLUSH -1
+
+
+
 
 /**
  * struct info - ......
  * @arg: a string generated from getline containing arguments.
  * @argc: the argument count.
  * @argv: an array of string generated from arg.
+ * @env: linked list local copy of environ.
  * @env_changed: ......
  * @environ: custom modified copy of environ from LL env.
  * @status: the return status of the last exec'd command.
@@ -32,10 +38,13 @@ typedef struct info
 	char *arg;
 	char **argv;
 	int argc;
-	/*list_t *env;   @env: linked list local copy of environ. */
+	list_t *env; 
 	char **environ;
 	int status;
 	int env_changed;
+	list_t *history;
+	list_t *alias;
+
 } info_t;
 
 <<<<<<< HEAD
@@ -45,11 +54,11 @@ typedef struct info
  * @str: a string.
  * @next: points to the next node.
  */
-typedef struct liststr
+typedef struct list_s
 {
-	int numb;
+	unsigned int len;
 	char *str;
-	struct liststr *next;
+	struct list_s *next;
 } list_t;
 
 =======
@@ -85,11 +94,14 @@ int _myexit(info_t *);
 int _putchar(char);
 void _puts(char *);
 int _strcmp(char *, char *);
+char *_strchr(char *, char);
 
 
 /*Printf declarations*/
 #define UNUSED(x) (void)(x)
 #define BUFF_SIZE 1024
+
+
 
 #define _MINUS 1
 #define _PLUS 2

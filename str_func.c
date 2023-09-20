@@ -28,6 +28,7 @@ int _strcmp(char *k, char *f)
  * Return: (o) a pointer to the memory area o
  */
 char *_strchr(char *o, char z)
+{
 	do {
 		if (*o == z)
 			return (o);

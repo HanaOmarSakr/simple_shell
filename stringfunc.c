@@ -58,6 +58,7 @@ char *_strdup(const char *string)
 	*p = '\0';
 	return (start);
 }
+
 char *_strcat(char *dest, const char *src)
 {
 	char *ptr = dest + strlen(dest);
