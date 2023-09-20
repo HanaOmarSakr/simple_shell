@@ -1,5 +1,5 @@
 #include "main.h"
-
+/*
 char **my_strtok(char *str)
 {
     int i = 0, j = 0;

@@ -23,21 +23,21 @@ char **split_line(char *str)
 
 	strcpy(lineptr_copy, str);
 	/* calculate the total number of tokens */
-	token = my_strtok(str);
+	token = strtok(str);
 	while (token != NULL)
 	{
 		num++;
-		token = my_strtok(NULL); /*CONTINUE WHERE U STOPPED*/
+		tokenmy_strtok(NULL); /*CONTINUE WHERE U STOPPED*/
 	}
 
 	argv = malloc(sizeof(char *) * (num + 1));
 	/* Store each token in the argv array */
-	token = my_strtok(lineptr_copy);
+	tokenmy_strtok(lineptr_copy);
 	for (i = 0; token != NULL; i++)
 	{
 		argv[i] = malloc(sizeof(char) * (strlen(token) + 1));
 		strcpy(argv[i], token);
-		token = my_strtok(NULL);
+		tokenmy_strtok(NULL);
 	}
 	argv[i] = NULL;
 
