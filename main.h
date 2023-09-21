@@ -18,6 +18,7 @@
 #define O_WRONLY 01
 #define O_RDWR   02
 
+int _isatty();
 void *_memcpy(void *dest, const void *src, size_t n);
 void freeptp(char **pp);
 char *getInput(char *path_file);
@@ -31,9 +32,9 @@ char **split_line(char *str, char *delim);
 char *_strcpy(char *dest, const char *src);
 int _strlen(const char *buffer);
 char *_strdup(const char *);
-void execute_command(char *args[], char *envp[]);
 int main(int argc, char **argv);
 char *_strtok(char *str, const char *delim);
+char *isNull(char *ptr);
 
 /*Printf declarations*/
 #define UNUSED(x) (void)(x)
