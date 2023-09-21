@@ -24,7 +24,7 @@ void execute(char **argv)
 	{
 		if (argv)
 		{
-			check = execve(get_path(argv[0]), argv, NULL);
+			check = execve(get_path(argv[0]), argv, environ);
 			if (check == -1)
 				perror("Error");
 		}
