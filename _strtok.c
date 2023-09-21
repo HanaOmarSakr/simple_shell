@@ -18,7 +18,7 @@ char *_strtok(char *str, const char *delim)
 	if (buffer == NULL)
 		return (NULL);
 
-	while (*buffer != '\0' && strchr(delim, *buffer) != NULL)
+	while (*buffer != '\0' && _strchr(delim, *buffer) != NULL)
 		buffer++;
 
 	if (*buffer == '\0')
