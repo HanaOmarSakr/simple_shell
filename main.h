@@ -25,7 +25,6 @@ void *_memcpy(void *dest, const void *src, size_t n);
 void freeptp(char **pp);
 char *getInput(char *path_file);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
-void execute_file(char *file_path);
 char *get_path(char *command);
 char *_strcat(char *dest, const char *src);
 ssize_t _getline(char **line);
@@ -36,7 +35,6 @@ int _strlen(const char *buffer);
 char *_strdup(const char *);
 int main(int argc, char **argv);
 char *_strtok(char *str, const char *delim);
-char *isNull(char *ptr);
 
 /*Printf declarations*/
 #define UNUSED(x) (void)(x)

@@ -22,11 +22,14 @@ int main(int argc, char **argv)
 		_printf("$ ");
 		check = _getline(&input);
 		/* check if the getline function reached EOF or user use CTRL + D */
-		if (check == -1)
-			return (-1);
 
 		splitted = split_line(input, " \n");
-		execute(splitted);
+		if (_strcmp((splitted[0]), "exit") == 0)
+			check = -1;
+		else
+			execute(splitted);
+		if (check == -1)
+			return (-1);
 	}
 	free(input);
 	freeptp(splitted);
