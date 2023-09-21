@@ -18,7 +18,7 @@
 #define O_WRONLY 01
 #define O_RDWR   02
 
-int _isatty();
+int _isatty(void);
 void *_memcpy(void *dest, const void *src, size_t n);
 void freeptp(char **pp);
 char *getInput(char *path_file);
