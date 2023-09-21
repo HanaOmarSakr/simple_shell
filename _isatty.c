@@ -2,12 +2,11 @@
 
 /**
  * _isatty - returns true if shell is interactive mode
- * @info: struct address
  *
  * Return: 1 if interactive mode, 0 otherwise
  */
 
-int _isatty()
+int _isatty(void)
 {
 	if (!isatty(STDIN_FILENO))
 	{
