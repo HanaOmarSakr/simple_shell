@@ -29,7 +29,7 @@ int main(int argc, char **argv)
 		else
 			execute(splitted);
 		if (check == -1)
-			return (-1);
+			my_exit();
 	}
 	free(input);
 	freeptp(splitted);

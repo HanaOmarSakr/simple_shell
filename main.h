@@ -18,6 +18,7 @@
 #define O_WRONLY 01
 #define O_RDWR   02
 
+void my_exit(void);
 char *_strchr(const char *s, int c);
 int _strcmp(const char *s, const char *t);
 int _isatty(void);

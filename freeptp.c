@@ -17,3 +17,12 @@ void freeptp(char **pp)
 		free(p);
 	free(a);
 }
+
+/**
+ * my_exit - ..........
+ * Return: nothing
+ */
+void my_exit(void)
+{
+    exit(0);
+}
