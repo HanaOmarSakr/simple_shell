@@ -18,6 +18,8 @@
 #define O_WRONLY 01
 #define O_RDWR   02
 
+char *_strchr(const char *s, int c);
+int _strcmp(const char *s, const char *t);
 int _isatty(void);
 void *_memcpy(void *dest, const void *src, size_t n);
 void freeptp(char **pp);
