@@ -24,5 +24,5 @@ void freeptp(char **pp)
  */
 void my_exit(void)
 {
-    exit(0);
+	exit(0);
 }
