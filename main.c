@@ -30,8 +30,8 @@ int main(int argc, char **argv)
 			execute(splitted);
 		if (check == -1)
 			return (-1);
+		free(input);
+		freeptp(splitted);
 	}
-	free(input);
-	freeptp(splitted);
 	return (0);
 }
