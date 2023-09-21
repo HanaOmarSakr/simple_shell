@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 		splitted = split_line(input, " \n");
 		if (_strcmp((splitted[0]), "exit") == 0)
 			check = -1;
-		else
+		else if (iscommand(get_path(splitted[0])) == 1)
 			execute(splitted);
 		if (check == -1)
 			return (-1);

@@ -19,6 +19,7 @@
 #define O_RDWR   02
 extern char **environ;
 
+int iscommand(char *filepath);
 void my_exit(void);
 char *_strchr(const char *s, int c);
 int _strcmp(const char *s, const char *t);

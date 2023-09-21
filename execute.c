@@ -12,8 +12,6 @@ void execute(char **argv)
 	int check;
 	int status;
 
-
-
 	if (pid < 0)
 	{
 		perror("fork failed");
