@@ -17,6 +17,7 @@
 #define O_RDONLY 00
 #define O_WRONLY 01
 #define O_RDWR   02
+extern char **environ;
 
 void my_exit(void);
 char *_strchr(const char *s, int c);
