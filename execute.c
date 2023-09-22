@@ -29,6 +29,6 @@ void execute(char **argv)
 	}
 	else
 	{
-		wait();
+		wait(pid, &status, 0);
 	}
 }
