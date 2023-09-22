@@ -26,7 +26,7 @@ int _strcmp(const char *s, const char *t);
 int _isatty(void);
 void *_memcpy(void *dest, const void *src, size_t n);
 void freeptp(char **pp);
-char *getInput(char *path_file);
+char *getInput(char *file_name);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 char *get_path(char *command);
 char *_strcat(char *dest, const char *src);

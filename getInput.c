@@ -2,11 +2,12 @@
 
 /**
  * getInput - ....
- * @path_file: file descriptor
+ * @file_name: file name
+  * @program: program
  * Return: ..........
 */
 
-char *getInput(char *path_file)
+char *getInput(char *file_name)
 {
 	static char buffer[BUFF_SIZE];
 	static char *ptr = buffer;
@@ -14,12 +15,9 @@ char *getInput(char *path_file)
 	char *line;
 	int len, fd = 0;
 
-	fd = open(path_file, O_RDONLY);
+	fd = open(file_name, O_RDONLY);
 	if (fd == -1)
-	{
-		perror("Error opening file");
-		return (NULL);
-	}
+		return ("-1");
 	line = malloc(BUFF_SIZE);
 	if (!line)
 		return (NULL);
