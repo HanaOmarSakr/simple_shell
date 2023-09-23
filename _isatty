@@ -6,12 +6,12 @@
  * Return: 1 if interactive mode, 0 otherwise
  */
 
-int _isatty(void)
+void _isatty(void)
 {
 	if (!isatty(STDIN_FILENO))
 	{
-		return (0);  /* noninteractive mode */
+		interactive = 0;  /* noninteractive mode */
 	}
 
-	return (1); /* interactive mode */
+	interactive = 1; /* interactive mode */
 }

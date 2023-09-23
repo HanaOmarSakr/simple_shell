@@ -17,13 +17,16 @@
 #define O_RDONLY 00
 #define O_WRONLY 01
 #define O_RDWR   02
+
 extern char **environ;
 
+char *nonint (char *line);
+int can_execute(char *command);
+char **run (char *line);
 int iscommand(char *filepath);
-void my_exit(void);
 char *_strchr(const char *s, int c);
 int _strcmp(const char *s, const char *t);
-int _isatty(void);
+void _isatty(void);
 void *_memcpy(void *dest, const void *src, size_t n);
 void freeptp(char **pp);
 char *getInput(char *file_name);
